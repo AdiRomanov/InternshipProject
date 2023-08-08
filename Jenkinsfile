@@ -4,10 +4,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                script {
-                    echo 'Hello, Jenkins!'
-                    currentBuild.result = 'SUCCESS'
-                }
+                echo 'Hello, Jenkins!'
             }
         }
         
