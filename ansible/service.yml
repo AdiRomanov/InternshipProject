@@ -4,7 +4,7 @@ metadata:
   name: your-app-service
 spec:
   selector:
-    app: wildrydes-site--deployment
+    app: wildrydes--site-deployment
   ports:
     - protocol: TCP
       port: 80

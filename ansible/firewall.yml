@@ -1,0 +1,19 @@
+---
+- name: Create Firewall
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Create firewall rule
+      google.cloud.gcp_compute_firewall:
+        name: allow-http
+        network: my-vpc-network
+        allowed:
+          - protocol: tcp
+            ports:
+              - "80"
+        source_ranges:
+          - "0.0.0.0/0"
+        auth_kind: serviceaccount
+        service_account_file: /mnt/c/Users/roman/Desktop/Credentials/cred2.json
+        project: mydevopsproject-395211

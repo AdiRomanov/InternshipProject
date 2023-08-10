@@ -1,0 +1,15 @@
+---
+- name: Create Subnetwork
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Create subnetwork
+      google.cloud.gcp_compute_subnetwork:
+        name: my-subnet
+        network: "{{ my-vpc-network }}"
+        ip_cidr_range: "10.0.0.0/24"
+        region: europe-west1
+        auth_kind: serviceaccount
+        service_account_file: /mnt/c/Users/roman/Desktop/Credentials/cred2.json
+        project: mydevopsproject-395211

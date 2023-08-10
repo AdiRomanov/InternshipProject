@@ -17,7 +17,7 @@
       shell: docker push gcr.io/mydevopsproject-395211/wildrydes-webapp:latest
 
     - name: Apply Kubernetes Deployment
-      shell: kubectl create deployment wildrydes-site--deployment --image=gcr.io/mydevopsproject-395211/wildrydes-webapp:latest
+      shell: kubectl create deployment wildrydes--site-deployment --image=gcr.io/mydevopsproject-395211/wildrydes-webapp:latest
 
     - name: Apply Kubernetes HPA
-      shell: kubectl autoscale deployment wildrydes-site--deployment --cpu-percent=70 --min=2 --max=5
+      shell: kubectl autoscale deployment wildrydes--site-deployment --cpu-percent=70 --min=2 --max=5
